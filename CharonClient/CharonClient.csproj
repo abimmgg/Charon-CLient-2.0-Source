@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBA5C926-C909-463B-809F-CFD4A4A8487B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CharonClientWhiteDress.ChatCommands</RootNamespace>
+    <AssemblyName>CharonClient</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" />
+    <Reference Include="Assembly-CSharp" />
+    <Reference Include="BepInEx.Core" />
+    <Reference Include="BepInEx.Unity.IL2CPP" />
+    <Reference Include="DearImGuiInjection" />
+    <Reference Include="DiscordRPC">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib" />
+    <Reference Include="ImGui.NET" />
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Scripting">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="RendererFinder" />
+    <Reference Include="System.Collections">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\System.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData">
+      <HintPath>..\..\..\..\..\..\..\Downloads\Charon 2.0\BepInEx\plugins\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.36\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro" />
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.ImageConversionModule" />
+    <Reference Include="UnityEngine.IMGUIModule" />
+    <Reference Include="UnityEngine.InputLegacyModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-PrivateImplementationDetails-{78F5D6B8-\E854A64B-0BBE-41D4-B2FE-C03C4AF7BF67.cs" />
+    <Compile Include="CharonAndFriends\HarmonyPatches\Patches.cs" />
+    <Compile Include="CharonAndFriends\HarmonyPatches\RuntimeTickPatches.cs" />
+    <Compile Include="CharonAndFriends\HarmonyPatches\TrackingPatches.cs" />
+    <Compile Include="CharonAndFriends\NetworkClient_HandleMessage.cs" />
+    <Compile Include="CharonAndFriends\OutgoingMessages_AddOneMessageToList.cs" />
+    <Compile Include="CharonClient\Configuration\ConfigFile.cs" />
+    <Compile Include="PrefixSubmit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="랾\란.cs" />
+    <Compile Include="랾\랁.cs" />
+    <Compile Include="랾\랃.cs" />
+    <Compile Include="랾\랄.cs" />
+    <Compile Include="랾\랅.cs" />
+    <Compile Include="랾\랆.cs" />
+    <Compile Include="랾\랉.cs" />
+    <Compile Include="랾\랊.cs" />
+    <Compile Include="랾\랋.cs" />
+    <Compile Include="랾\람.cs" />
+    <Compile Include="랾\랐.cs" />
+    <Compile Include="랾\랓.cs" />
+    <Compile Include="랾\랖.cs" />
+    <Compile Include="랾\랛.cs" />
+    <Compile Include="랾\랞.cs" />
+    <Compile Include="랾\랟.cs" />
+    <Compile Include="랾\랠.cs" />
+    <Compile Include="랾\랡.cs" />
+    <Compile Include="랾\랢.cs" />
+    <Compile Include="랾\랦.cs" />
+    <Compile Include="랾\랪.cs" />
+    <Compile Include="랾\랫.cs" />
+    <Compile Include="랾\랬.cs" />
+    <Compile Include="랾\랮.cs" />
+    <Compile Include="랾\랯.cs" />
+    <Compile Include="랾\랰.cs" />
+    <Compile Include="랾\랱.cs" />
+    <Compile Include="랾\랳.cs" />
+    <Compile Include="랾\랴.cs" />
+    <Compile Include="랾\랺.cs" />
+    <Compile Include="랾\랽.cs" />
+    <Compile Include="랾\랾.cs" />
+    <Compile Include="랾\럅.cs" />
+    <Compile Include="랾\럆.cs" />
+    <Compile Include="랾\럇.cs" />
+    <Compile Include="랾\럈.cs" />
+    <Compile Include="랾\량.cs" />
+    <Compile Include="랾\럊.cs" />
+    <Compile Include="랾\럍.cs" />
+    <Compile Include="랾\럎.cs" />
+    <Compile Include="랾\럏.cs" />
+    <Compile Include="랾\럐.cs" />
+    <Compile Include="랾\럑.cs" />
+    <Compile Include="랾\럒.cs" />
+    <Compile Include="랾\럓.cs" />
+    <Compile Include="랾\럔.cs" />
+    <Compile Include="랾\럕.cs" />
+    <Compile Include="랾\럖.cs" />
+    <Compile Include="랾\럘.cs" />
+    <Compile Include="랾\럙.cs" />
+    <Compile Include="랾\럚.cs" />
+    <Compile Include="랾\럜.cs" />
+    <Compile Include="랾\럝.cs" />
+    <Compile Include="랾\럟.cs" />
+    <Compile Include="랾\럠.cs" />
+    <Compile Include="랾\럣.cs" />
+    <Compile Include="랾\럦.cs" />
+    <Compile Include="랾\럧.cs" />
+    <Compile Include="랾\럩.cs" />
+    <Compile Include="랾\럫.cs" />
+    <Compile Include="랾\러.cs" />
+    <Compile Include="랾\럭.cs" />
+    <Compile Include="랾\럯.cs" />
+    <Compile Include="랾\럲.cs" />
+    <Compile Include="랾\럳.cs" />
+    <Compile Include="랾\럴.cs" />
+    <Compile Include="랾\럷.cs" />
+    <Compile Include="랾\럸.cs" />
+    <Compile Include="랾\럺.cs" />
+    <Compile Include="랾\럻.cs" />
+    <Compile Include="랾\럼.cs" />
+    <Compile Include="랾\럽.cs" />
+    <Compile Include="뼫뀌땒.cs" />
+    <Compile Include="횻뀹꺜뼻.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CharonClient.UI.Assets.Black_Dress_Compressed.gif" />
+    <EmbeddedResource Include="CharonClient.UI.Assets.White_Dress_Compressed.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
